@@ -1,4 +1,4 @@
-package Output;
+package out;
 
 import java.util.ArrayList;
 
@@ -8,18 +8,17 @@ import data.faker.MockUtil;
 import data.faker.NameStringGenerator;
 import io.swagger.model.consents.AccountReference;
 import io.swagger.model.consents.InlineResponse200;
-import io.swagger.model.consents.InlineResponse200.ConsentStatusEnum;
 import io.swagger.model.consents.SingleAccountAccess;
 import io.swagger.model.consents.TransactionStatus;
 
 public class ObjectCreatorInlineResponse200 {
 	public InlineResponse200 createInlineResponse200() {
 		InlineResponse200 obj = new InlineResponse200();
-		obj.setConsentStatus(ConsentStatusEnum.DELETED);
 		obj.setValidUntil(createLocalDate());
-		// list here for io.swagger.model.consents.InlineResponse200 -
+		obj.setConsentStatus(InlineResponse200.ConsentStatusEnum.BLOCKED);
+		// list here
 		ArrayList<SingleAccountAccess> oList1 = new ArrayList<SingleAccountAccess>();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 2; i++) {
 			oList1.add(createSingleAccountAccess());
 		}
 		obj.setAccessAccounts(oList1);
@@ -38,10 +37,10 @@ public class ObjectCreatorInlineResponse200 {
 	public SingleAccountAccess createSingleAccountAccess() {
 		SingleAccountAccess obj = new SingleAccountAccess();
 		obj.setAccount(createAccountReference());
-		// list here for io.swagger.model.consents.SingleAccountAccess -
+		// list here
 		ArrayList<String> oList2 = new ArrayList<String>();
-		for (int i = 0; i < 3; i++) {
-			oList2.add(NameStringGenerator.getInstance().createNameString("Access-type"));
+		for (int i = 0; i < 2; i++) {
+			oList2.add(NameStringGenerator.getInstance().createNameString("AccessType"));
 		}
 		obj.setAccessType(oList2);
 		return obj;

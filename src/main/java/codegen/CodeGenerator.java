@@ -84,7 +84,7 @@ public class CodeGenerator {
 								sb.append("for (int i=0; i < " + listLength + "; i++){\n")
 										.append("oList" + listObjectCounter + ".add(")
 										.append(createPrimitiveDataString(methodReturnTypeClass,
-												CodeGenUtil.firstToUpper(
+												CodeGenUtil.underscoreToCamelCase(
 														((com.fasterxml.jackson.annotation.JsonProperty) annotation)
 																.value()))
 												+ ");\n");
@@ -93,7 +93,7 @@ public class CodeGenerator {
 
 								// call setter
 								sb.append("obj.set"
-										+ CodeGenUtil.firstToUpper(
+										+ CodeGenUtil.underscoreToCamelCase(
 												((com.fasterxml.jackson.annotation.JsonProperty) annotation).value())
 										+ "(oList" + listObjectCounter + ");\n");
 
@@ -116,7 +116,7 @@ public class CodeGenerator {
 
 								// call setter
 								sb.append("obj.set"
-										+ CodeGenUtil.firstToUpper(
+										+ CodeGenUtil.underscoreToCamelCase(
 												((com.fasterxml.jackson.annotation.JsonProperty) annotation).value())
 										+ "(oList" + listObjectCounter + ");\n");
 
@@ -136,9 +136,9 @@ public class CodeGenerator {
 
 							// call setter
 							sb.append("obj.set" + CodeGenUtil
-									.firstToUpper(((com.fasterxml.jackson.annotation.JsonProperty) annotation).value())
+									.underscoreToCamelCase(((com.fasterxml.jackson.annotation.JsonProperty) annotation).value())
 									+ "("
-									+ createPrimitiveDataString(claz, CodeGenUtil.firstToUpper(
+									+ createPrimitiveDataString(claz, CodeGenUtil.underscoreToCamelCase(
 											((com.fasterxml.jackson.annotation.JsonProperty) annotation).value()))
 									+ ");\n");
 
@@ -147,7 +147,7 @@ public class CodeGenerator {
 
 							// call setter
 							sb.append("obj.set"
-									+ CodeGenUtil.firstToUpper(
+									+ CodeGenUtil.underscoreToCamelCase(
 											((com.fasterxml.jackson.annotation.JsonProperty) annotation).value())
 									+ "( create" + claz.getSimpleName() + "());\n");
 

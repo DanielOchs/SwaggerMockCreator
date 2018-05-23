@@ -10,9 +10,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.github.javafaker.Faker;
 
-import Output.MockCreator;
-import Output.ObjectCreatorBranch;
 import io.swagger.model.branch.Branch;
+import out.MockCreator;
+import out.ObjectCreatorBranch;
 
 
 public class MCMain 
