@@ -1,4 +1,4 @@
-package Output;
+package out;
 
 import java.util.LinkedList;
 import java.util.List;
