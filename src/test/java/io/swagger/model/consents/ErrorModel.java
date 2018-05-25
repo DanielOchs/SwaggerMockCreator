@@ -2,11 +2,10 @@ package io.swagger.model.consents;
 
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class ErrorModel  {
   
   @ApiModelProperty(required = true, value = "")
@@ -56,10 +55,10 @@ public class ErrorModel  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("{\n");
-    sb.append("    ").append('"').append("code").append('"').append(": ").append(toIndentedString(code)).append(",\n");
-    sb.append("    ").append('"').append("message").append('"').append(": ")
-    .append('"').append(toIndentedString(message)).append('"').append("\n");
+    sb.append("class ErrorModel {\n");
+    
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }

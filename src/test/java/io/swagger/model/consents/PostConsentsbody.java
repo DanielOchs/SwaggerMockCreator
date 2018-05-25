@@ -2,19 +2,18 @@ package io.swagger.model.consents;
 
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class PostConsentsbody  {
   
   @ApiModelProperty(required = true, value = "")
   private SingleAccountAccess accessAccounts = null;
 
-  @ApiModelProperty(example = "true", required = true, value = "â€œtrueâ€œ, if the consent is for recurring access to the account data â€œfalseâ€œ, if the consent is for one access to the account data")
+  @ApiModelProperty(example = "true", required = true, value = "“true“, if the consent is for recurring access to the account data “false“, if the consent is for one access to the account data")
  /**
-   * â€œtrueâ€œ, if the consent is for recurring access to the account data â€œfalseâ€œ, if the consent is for one access to the account data  
+   * “true“, if the consent is for recurring access to the account data “false“, if the consent is for one access to the account data  
   **/
   private Boolean recurringIndicator = null;
 
@@ -24,15 +23,15 @@ public class PostConsentsbody  {
   **/
   private String validUntil = null;
 
-  @ApiModelProperty(example = "1", required = true, value = "This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to â€œ1â€�.")
+  @ApiModelProperty(example = "1", required = true, value = "This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to “1”.")
  /**
-   * This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to â€œ1â€�.  
+   * This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to “1”.  
   **/
   private Integer frequencyPerDay = null;
 
-  @ApiModelProperty(example = "false", required = true, value = "If â€œtrueâ€œ indicates that a payment initiation service will be addressed in the same â€œsessionâ€œ.")
+  @ApiModelProperty(example = "false", required = true, value = "If “true“ indicates that a payment initiation service will be addressed in the same “session“.")
  /**
-   * If â€œtrueâ€œ indicates that a payment initiation service will be addressed in the same â€œsessionâ€œ.  
+   * If “true“ indicates that a payment initiation service will be addressed in the same “session“.  
   **/
   private Boolean combinedServiceIndicator = null;
  /**
@@ -55,7 +54,7 @@ public class PostConsentsbody  {
   }
 
  /**
-   * â€œtrueâ€œ, if the consent is for recurring access to the account data â€œfalseâ€œ, if the consent is for one access to the account data
+   * “true“, if the consent is for recurring access to the account data “false“, if the consent is for one access to the account data
    * @return recurringIndicator
   **/
   @JsonProperty("recurring_indicator")
@@ -93,7 +92,7 @@ public class PostConsentsbody  {
   }
 
  /**
-   * This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to â€œ1â€�.
+   * This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to “1”.
    * @return frequencyPerDay
   **/
   @JsonProperty("frequency_per_day")
@@ -112,7 +111,7 @@ public class PostConsentsbody  {
   }
 
  /**
-   * If â€œtrueâ€œ indicates that a payment initiation service will be addressed in the same â€œsessionâ€œ.
+   * If “true“ indicates that a payment initiation service will be addressed in the same “session“.
    * @return combinedServiceIndicator
   **/
   @JsonProperty("combined_service_indicator")
@@ -134,13 +133,13 @@ public class PostConsentsbody  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("{\n");
+    sb.append("class PostConsentsbody {\n");
     
-    sb.append('\"').append("accessAccounts").append('"').append(": ").append(toIndentedString(accessAccounts)).append(",\n");
-    sb.append('\"').append("recurringIndicator").append('"').append(": ").append(toIndentedString(recurringIndicator)).append(",\n");
-    sb.append('\"').append("validUntil").append('"').append(": ").append(toIndentedString(validUntil)).append(",\n");
-    sb.append('\"').append("frequencyPerDay").append('"').append(": ").append(toIndentedString(frequencyPerDay)).append(",\n");
-    sb.append('\"').append("combinedServiceIndicator").append('"').append(": ").append(toIndentedString(combinedServiceIndicator)).append("\n");
+    sb.append("    accessAccounts: ").append(toIndentedString(accessAccounts)).append("\n");
+    sb.append("    recurringIndicator: ").append(toIndentedString(recurringIndicator)).append("\n");
+    sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");
+    sb.append("    frequencyPerDay: ").append(toIndentedString(frequencyPerDay)).append("\n");
+    sb.append("    combinedServiceIndicator: ").append(toIndentedString(combinedServiceIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

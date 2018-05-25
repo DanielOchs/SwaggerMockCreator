@@ -1,20 +1,18 @@
 package io.swagger.model.consents;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class PostConsentAccountListBody  {
   
-  @ApiModelProperty(value = "If the value equals â€œtrueâ€�, then the consent request is on the list of all payment accounts inclusive the balance. If the value equals â€œfalseâ€�, then the consent request is on the list of accounts only.")
+  @ApiModelProperty(value = "If the value equals “true”, then the consent request is on the list of all payment accounts inclusive the balance. If the value equals “false”, then the consent request is on the list of accounts only.")
  /**
-   * If the value equals â€œtrueâ€�, then the consent request is on the list of all payment accounts inclusive the balance. If the value equals â€œfalseâ€�, then the consent request is on the list of accounts only.  
+   * If the value equals “true”, then the consent request is on the list of all payment accounts inclusive the balance. If the value equals “false”, then the consent request is on the list of accounts only.  
   **/
   private Boolean withBalance = null;
  /**
-   * If the value equals â€œtrueâ€�, then the consent request is on the list of all payment accounts inclusive the balance. If the value equals â€œfalseâ€�, then the consent request is on the list of accounts only.
+   * If the value equals “true”, then the consent request is on the list of all payment accounts inclusive the balance. If the value equals “false”, then the consent request is on the list of accounts only.
    * @return withBalance
   **/
   @JsonProperty("with-balance")

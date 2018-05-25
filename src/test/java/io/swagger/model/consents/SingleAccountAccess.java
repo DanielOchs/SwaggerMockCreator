@@ -5,19 +5,18 @@ import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class SingleAccountAccess  {
   
   @ApiModelProperty(required = true, value = "")
   private AccountReference account = null;
 
-  @ApiModelProperty(required = true, value = "The values â€�balanceâ€� and \"transactionsâ€� are permitted.")
+  @ApiModelProperty(required = true, value = "The values ”balance” and \"transactions” are permitted.")
  /**
-   * The values â€�balanceâ€� and \"transactionsâ€� are permitted.  
+   * The values ”balance” and \"transactions” are permitted.  
   **/
   private List<String> accessType = new ArrayList<String>();
  /**
@@ -40,7 +39,7 @@ public class SingleAccountAccess  {
   }
 
  /**
-   * The values â€�balanceâ€� and \&quot;transactionsâ€� are permitted.
+   * The values ”balance” and \&quot;transactions” are permitted.
    * @return accessType
   **/
   @JsonProperty("access-type")
@@ -67,10 +66,10 @@ public class SingleAccountAccess  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append(" {\n");
+    sb.append("class SingleAccountAccess {\n");
     
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
-    sb.append("    accessType: ").append('"').append(toIndentedString(accessType)).append('"').append("\n");
+    sb.append("    accessType: ").append(toIndentedString(accessType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
