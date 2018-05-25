@@ -1,11 +1,9 @@
 package io.swagger.model.consents;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Challenge  {
   
   @ApiModelProperty(value = "PNG data (max. 512 kilobyte) to be displayed to the PSU, Base64 encoding , cp. [RFC 4648]. This attribute is used only, when PHOTO_OTP or CHIP_OTP is the selected SCA method.")
@@ -20,9 +18,9 @@ public class Challenge  {
   **/
   private Integer otPMaxLength = null;
 
-  @ApiModelProperty(value = "The format type of the OTP to be typed in. The admitted values are â€œcharactersâ€� or â€œintegerâ€�.")
+  @ApiModelProperty(value = "The format type of the OTP to be typed in. The admitted values are “characters” or “integer”.")
  /**
-   * The format type of the OTP to be typed in. The admitted values are â€œcharactersâ€� or â€œintegerâ€�.  
+   * The format type of the OTP to be typed in. The admitted values are “characters” or “integer”.  
   **/
   private String otPFormat = null;
 
@@ -53,7 +51,7 @@ public class Challenge  {
    * The maximal length for the OTP to be typed in by the PSU.
    * @return otPMaxLength
   **/
-  @JsonProperty("OTP_max_length")
+  @JsonProperty("OTTTTP_max_length")
   public Integer getOtPMaxLength() {
     return otPMaxLength;
   }
@@ -68,7 +66,7 @@ public class Challenge  {
   }
 
  /**
-   * The format type of the OTP to be typed in. The admitted values are â€œcharactersâ€� or â€œintegerâ€�.
+   * The format type of the OTP to be typed in. The admitted values are “characters” or “integer”.
    * @return otPFormat
   **/
   @JsonProperty("OTP_format")

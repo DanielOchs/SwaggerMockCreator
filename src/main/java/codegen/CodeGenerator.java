@@ -10,8 +10,48 @@ public class CodeGenerator {
 	private static ArrayList<Class> classList;
 	private static int listObjectCounter;
 
-	public String getClassObjects(Class clazz)
-			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+
+	@SuppressWarnings("unused")
+	public String getClassObjectsFromPackage(String packageName, String className)
+	{
+		
+		StringBuilder sb = new StringBuilder();
+
+		classList = new ArrayList<Class>();
+		listObjectCounter = 1;
+		
+			// public class <className> { <<Methods>> }
+			sb.append("public class "+className+" \n {\n");
+			
+			//loop trough all classes in the package
+			try {
+				for (Class clazz: CodeGenUtil.getPackageObjects(packageName))
+				{
+					try {
+						if (!classList.contains(clazz) && !clazz.isEnum() ) {
+							classList.add(clazz);
+							sb.append((getClassObjects(clazz,0 )));
+						}
+						else {System.out.println("ist drin");}
+
+					} catch (Exception e) {
+						e.printStackTrace();}
+				}
+			
+		//Catch	
+		} catch (Exception e) {	e.printStackTrace();	}	
+
+		
+			sb.append("}");
+
+			System.out.println("JavaClass was created");
+			
+			return sb.toString();
+
+	}
+	
+	
+	public String getClassObjects(Class clazz){
 
 		StringBuilder sb = new StringBuilder();
 
@@ -20,16 +60,24 @@ public class CodeGenerator {
 
 		// public class <className> { <<Methods>> }
 		sb.append("public class ObjectCreator" + clazz.getSimpleName() + " \n {\n");
-		sb.append(getClassObjects(clazz, 0));
+		
+		try {
+			sb.append(getClassObjects(clazz, 0));
+		} catch (Exception e)
+		{	e.printStackTrace();}
+		
 		sb.append("}");
 
 		System.out.println("JavaClass was created");
 		return sb.toString();
 	}
 
-	public static String getClassObjects(Class clazz, int depth)
+	
+	//recursive help method
+	private static String getClassObjects(Class clazz, int depth)
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 
+		
 		StringBuilder sb = new StringBuilder();
 
 		String currentClassName = clazz.getSimpleName();
@@ -54,6 +102,7 @@ public class CodeGenerator {
 
 						Class<?> claz = (Class<?>) method.getReturnType();
 
+						
 						// write setters
 
 						// ...case of lists/collections
@@ -76,6 +125,9 @@ public class CodeGenerator {
 
 							if (isPrimitiveOrPrimitiveWrapperOrStringOrEnum(methodReturnTypeClass)) {
 
+								
+
+								
 								// instantiate new list
 								sb.append("ArrayList<").append(methodReturnTypeClassName)
 										.append("> oList" + listObjectCounter + " = new ArrayList<")
@@ -176,25 +228,25 @@ public class CodeGenerator {
 	}
 
 
-	public static boolean isPrimitiveOrPrimitiveWrapperOrStringOrEnum(Class<?> type) {
+	private static boolean isPrimitiveOrPrimitiveWrapperOrStringOrEnum(Class<?> type) {
 		return (type.isPrimitive() && type != void.class) || type == Double.class || type == Float.class
 				|| type == Long.class || type == Integer.class || type == Short.class || type == Character.class
 				|| type == Byte.class || type == Boolean.class || type == String.class || type.isEnum();
 	}
 
-	public static boolean isPrimitiveNumOrPrimitiveWrapperNum(Class<?> type) {
+	private static boolean isPrimitiveNumOrPrimitiveWrapperNum(Class<?> type) {
 		return (type == Double.class || type == Float.class || type == Byte.class || type == Long.class
 				|| type == Integer.class || type == Short.class);
 	}
 
-	public static String createPrimitiveDataString(Class<?> clazz, String name) {
+	private static String createPrimitiveDataString(Class<?> clazz, String name) {
 		// String
 		if (clazz.equals(String.class)) {
 			StringBuilder sb = new StringBuilder();
 			sb.append("NameStringGenerator.getInstance().createNameString(").append('"').append(name).append('"')
 					.append(")");
 			return sb.toString();
-			// Zahl
+			// Number
 		} else if (isPrimitiveNumOrPrimitiveWrapperNum(clazz)) {
 			StringBuilder sb = new StringBuilder();
 			sb.append("MockUtil.getInstance().return" + clazz.getSimpleName() + "(100)");
@@ -204,11 +256,14 @@ public class CodeGenerator {
 			StringBuilder sb = new StringBuilder();
 			sb.append("MockUtil.getInstance().returnBool()");
 			return sb.toString();
-			// Boolean
+			// Enum
 		} else if (clazz.isEnum()) {
+			
+
+
 			StringBuilder sb = new StringBuilder();
-			sb.append("(" + clazz.getSimpleName() + ")MockUtil.getInstance().returnRandomEnumValue("
-					+ clazz.getSimpleName() + ".class)");
+			sb.append("(" + clazz.getCanonicalName() + ")MockUtil.getInstance().returnRandomEnumValue("
+					+ clazz.getCanonicalName() + ".class)");
 			return sb.toString();
 			// Sonst
 		} else {

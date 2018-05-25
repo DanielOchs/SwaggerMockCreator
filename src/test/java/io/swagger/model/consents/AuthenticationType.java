@@ -1,6 +1,5 @@
 package io.swagger.model.consents;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModel;
@@ -9,9 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
   * Will be detailed after market consultation.
  **/
-
 @ApiModel(description="Will be detailed after market consultation.")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class AuthenticationType  {
   
   @ApiModelProperty(value = "")
@@ -101,7 +98,7 @@ public class AuthenticationType  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("authentication_type {\n");
+    sb.append("class AuthenticationType {\n");
     
     sb.append("    SMS_OTP: ").append(toIndentedString(SMS_OTP)).append("\n");
     sb.append("    CHIP_OTP: ").append(toIndentedString(CHIP_OTP)).append("\n");

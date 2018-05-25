@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
 
+@SuppressWarnings("restriction")
 public class InlineResponse200  {
   
   @ApiModelProperty(required = true, value = "")
@@ -31,9 +32,9 @@ public class InlineResponse200  {
   **/
   private LocalDate validUntil = null;
 
-  @ApiModelProperty(required = true, value = "This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to â€œ1â€�.")
+  @ApiModelProperty(required = true, value = "This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to “1”.")
  /**
-   * This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to â€œ1â€�.  
+   * This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to “1”.  
   **/
   private Integer frequencyPerDay = null;
 
@@ -141,7 +142,7 @@ public enum ConsentStatusEnum {
   }
 
  /**
-   * This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to â€œ1â€�.
+   * This field indicates the requested maximum frequency for an access per day. For a once-off access, this attribute is set to “1”.
    * @return frequencyPerDay
   **/
   @JsonProperty("frequency_per_day")

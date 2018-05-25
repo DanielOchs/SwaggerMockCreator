@@ -1,11 +1,9 @@
 package io.swagger.model.consents;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Links  {
   
   @ApiModelProperty(value = "A link to an ASPSP site where SCA is performed within the Redirect SCA approach.")
@@ -32,9 +30,9 @@ public class Links  {
   **/
   private String selectAuthenticationMethod = null;
 
-  @ApiModelProperty(value = "The link to the payment initiation or consent resource, where the â€œTransaction Authorizationâ€�Requestâ€œ is sent to. This is the link to the resource which will authorize the payment or the consent by checking the SCA authentication data within the Embedded SCA approach.")
+  @ApiModelProperty(value = "The link to the payment initiation or consent resource, where the “Transaction Authorization”Request“ is sent to. This is the link to the resource which will authorize the payment or the consent by checking the SCA authentication data within the Embedded SCA approach.")
  /**
-   * The link to the payment initiation or consent resource, where the â€œTransaction Authorizationâ€�Requestâ€œ is sent to. This is the link to the resource which will authorize the payment or the consent by checking the SCA authentication data within the Embedded SCA approach.  
+   * The link to the payment initiation or consent resource, where the “Transaction Authorization”Request“ is sent to. This is the link to the resource which will authorize the payment or the consent by checking the SCA authentication data within the Embedded SCA approach.  
   **/
   private String authoriseTransaction = null;
 
@@ -158,7 +156,7 @@ public class Links  {
   }
 
  /**
-   * The link to the payment initiation or consent resource, where the â€œTransaction Authorizationâ€�Requestâ€œ is sent to. This is the link to the resource which will authorize the payment or the consent by checking the SCA authentication data within the Embedded SCA approach.
+   * The link to the payment initiation or consent resource, where the “Transaction Authorization”Request“ is sent to. This is the link to the resource which will authorize the payment or the consent by checking the SCA authentication data within the Embedded SCA approach.
    * @return authoriseTransaction
   **/
   @JsonProperty("authorise_ transaction")

@@ -1,13 +1,11 @@
 package io.swagger.model.consents;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * The transaction status is filled with value of the ISO20022 data table, where the entry from the name column is used.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
 public enum TransactionStatus {
   
   ACCEPTEDCUSTOMERPROFILE("AcceptedCustomerProfile"),

@@ -1,35 +1,11 @@
 package io.swagger.model.consents;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class AccountReference  {
-  /*
-	{
-		  "access_accounts": {
-		    "account": {
-		      "iban": "string",
-		      "bban": "string",
-		      "pan": "string",
-		      "msisdn": "string"
-		    },
-		    "access-type": [
-		      "string"
-		    ]
-		  },
-		  "recurring_indicator": true,
-		  "valid_until": "2017-11-01T00:00:00.000Z",
-		  "frequency_per_day": 1,
-		  "combined_service_indicator": false
-		}
-	*/
-	
-	
-	//Variables
-	
+  
   @ApiModelProperty(value = "This data element can be used in the body of the Consent Request Message for retrieving account access consent from this payment account.")
  /**
    * This data element can be used in the body of the Consent Request Message for retrieving account access consent from this payment account.  
@@ -53,11 +29,6 @@ public class AccountReference  {
    * An alias to access a payment account via a registered mobile phone number. This alias might be needed e.g. in the payment initiation service. The support of this alias must be explicitly documented by the ASPSP for the corresponding API calls.  
   **/
   private String msisdn = null;
-  
-  
-  
-  //Getter Setters
-  
  /**
    * This data element can be used in the body of the Consent Request Message for retrieving account access consent from this payment account.
    * @return iban

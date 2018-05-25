@@ -1,6 +1,5 @@
 package io.swagger.model.consents;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -8,7 +7,6 @@ import io.swagger.annotations.ApiModelProperty;
 public class Authentication  {
   
   @ApiModelProperty(value = "")
-  @JsonIgnoreProperties(ignoreUnknown = true)
   private AuthenticationType authenticationType = null;
 
   @ApiModelProperty(value = "An identification provided by the ASPSP for the later identification of the authentication method selection.")
@@ -17,9 +15,9 @@ public class Authentication  {
   **/
   private String authenticationMethodId = null;
 
-  @ApiModelProperty(value = "This is the name of the authentication method defined by the PSU in the Online Banking frontend of the ASPSP. Alternatively this could be a description provided by the ASPSP like â€œSMS OTP on phone +49160 xxxxx 28â€�. This name shall be used by the TPP when presenting a list of authentication methods to the PSU, if available.")
+  @ApiModelProperty(value = "This is the name of the authentication method defined by the PSU in the Online Banking frontend of the ASPSP. Alternatively this could be a description provided by the ASPSP like “SMS OTP on phone +49160 xxxxx 28”. This name shall be used by the TPP when presenting a list of authentication methods to the PSU, if available.")
  /**
-   * This is the name of the authentication method defined by the PSU in the Online Banking frontend of the ASPSP. Alternatively this could be a description provided by the ASPSP like â€œSMS OTP on phone +49160 xxxxx 28â€�. This name shall be used by the TPP when presenting a list of authentication methods to the PSU, if available.  
+   * This is the name of the authentication method defined by the PSU in the Online Banking frontend of the ASPSP. Alternatively this could be a description provided by the ASPSP like “SMS OTP on phone +49160 xxxxx 28”. This name shall be used by the TPP when presenting a list of authentication methods to the PSU, if available.  
   **/
   private String name = null;
 
@@ -65,7 +63,7 @@ public class Authentication  {
   }
 
  /**
-   * This is the name of the authentication method defined by the PSU in the Online Banking frontend of the ASPSP. Alternatively this could be a description provided by the ASPSP like â€œSMS OTP on phone +49160 xxxxx 28â€�. This name shall be used by the TPP when presenting a list of authentication methods to the PSU, if available.
+   * This is the name of the authentication method defined by the PSU in the Online Banking frontend of the ASPSP. Alternatively this could be a description provided by the ASPSP like “SMS OTP on phone +49160 xxxxx 28”. This name shall be used by the TPP when presenting a list of authentication methods to the PSU, if available.
    * @return name
   **/
   @JsonProperty("name")
